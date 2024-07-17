@@ -74,22 +74,20 @@ application.properties
 Url
 
 	http://localhost:9001/restapidepartmentservices/departmentservices
-	http://localhost:8765/mmtspl-department-service/restapidepartmentservices/departmentservices
 
   	http://localhost:9001/restapidepartmentservices/getAllDepartment
-  	http://localhost:8765/mmtspl-department-service/restapidepartmentservices/getAllDepartment
-  	
+
+http://localhost:9001/restapidepartmentservices/getAllDepartmentEmployeeID
+  http://localhost:9001/restapidepartmentservices/getDepartmentByEmployeeID/1001
+
   	http://localhost:9001/restapidepartmentservices/getDepartmentById/2000
-  	http://localhost:8765/mmtspl-department-service/restapidepartmentservices/getDepartmentById/2000
-  	
+
   	http://localhost:9001/restapidepartmentservices/deleteDepartment/2000
-  	http://localhost:8765/mmtspl-department-service/restapidepartmentservices/deleteDepartment/2000
-  	
+
   	@NamedQuery
 
   	http://localhost:9001/restapidepartmentservices/getDepartmentByName/IT-Backend
-  	http://localhost:8765/mmtspl-department-service/restapidepartmentservices/getDepartmentByName/IT-Backend
-	
+
 	
 	Join
 	
@@ -97,11 +95,9 @@ Url
   	Global Exceptions ::
 
   	http://localhost:9001/restapidepartmentservices/getDepartmentByName/IT-Dev
-  	http://localhost:8765/mmtspl-department-service/restapidepartmentservices/getDepartmentByName/IT-Dev
-  	
+
   	http://localhost:9001/restapidepartmentservices/getDepartmentByID/15684
-  	http://localhost:8765/mmtspl-department-service/restapidepartmentservices/getDepartmentByID/15684
-  	
+
   	http://localhost:9001/restapidepartmentservices/deleteDepartment/200022
   	http://localhost:9001/restapidepartmentservices/deleteDepartment/200022
   	

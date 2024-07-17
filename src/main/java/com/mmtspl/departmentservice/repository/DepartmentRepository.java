@@ -135,7 +135,49 @@ public class DepartmentRepository {
 		
 		return departmentList;
 	}
-	
+
+
+	@SuppressWarnings("unchecked")
+	public List<Integer> getAllDepartmentEmployeeID() {
+		Session session = this.sessionFactory.getCurrentSession();
+		List<Integer> employeeIDList = null;
+		try {
+			employeeIDList = session.createQuery("Select employeeId from Department_Master").list();
+		}catch(NoDepartmentDataFoundException naf) {
+			naf.printStackTrace();
+		}catch(RecordNotFoundNullPointerException rnfnpe) {
+			rnfnpe.printStackTrace();
+		}finally {
+			//session.close();
+		}
+		return employeeIDList;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Department_Master> getDepartmentByEmployeeID(int employeeId) {
+		Session session = this.sessionFactory.getCurrentSession();
+		Query query = null;
+		//Optional<Address> addressOptional = null;
+		List<Department_Master> departmentList= null;
+
+		try {
+			query = session.getNamedQuery("@HQL_Find_Department_By_EmployeeID");
+			query.setParameter("employeeId", employeeId);
+			System.out.println("Named Query is : " + query.getQueryString());
+
+			departmentList = (List<Department_Master>) query.list().stream().collect(Collectors.toList());
+			//addressList = session.createQuery(query.toString()).list();
+
+			if(departmentList.isEmpty())
+				departmentList = null;
+		}catch(DepartmentInfoByIDNotFoundException dibinfe) {
+			dibinfe.printStackTrace();
+		}finally {
+			//session.close();
+		}
+
+		return departmentList;
+	}
 	// ****************** Calling from FrontController ********************** //
 
 	

@@ -30,6 +30,22 @@ public class DepartmentService {
 		
 		return departmetList;
 	}
+
+	@Transactional
+	public List<Integer> getAllDepartmentEmployeeID() {
+		List<Integer> employeeIDList = departmentRepository.getAllDepartmentEmployeeID();
+
+		if(employeeIDList.isEmpty())
+			throw new NoDepartmentDataFoundException();
+
+		return employeeIDList;
+	}
+
+	@Transactional
+	public List<Department_Master> getDepartmentByEmployeeID(int employeeId) {
+		List<Department_Master> departmentList = departmentRepository.getDepartmentByEmployeeID(employeeId);
+		return departmentList;
+	}
 	
 	@Transactional
 	public Department_Master getDepartmentByID(int departmentId) {
@@ -61,7 +77,9 @@ public class DepartmentService {
 		return matched;
 	}
 	
-	
+
+
+
 	
 	// ****************** @NamedQueries ********************** //
 	@Transactional

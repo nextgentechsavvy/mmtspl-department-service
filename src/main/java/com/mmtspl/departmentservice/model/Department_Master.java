@@ -18,7 +18,11 @@ import javax.persistence.Table;
 	        @NamedQuery(  
 					        name = "@HQL_Find_Department_By_Name",  
 					        query = "from Department_Master e where e.departmentName = :departmentName"  
-			)  
+			),
+			@NamedQuery(
+							name = "@HQL_Find_Department_By_EmployeeID",
+							query = "from Department_Master a where a.employeeId = :employeeId"
+			)
 	    }  
 	)  
 

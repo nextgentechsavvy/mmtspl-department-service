@@ -43,6 +43,18 @@ public class MMTSPLDepartmentServiceController {
 	}
 
 	@Transactional
+	@GetMapping("/getAllDepartmentEmployeeID")
+	public List<Integer> getAllDepartmentEmployeeID() {
+		return departmentService.getAllDepartmentEmployeeID();
+	}
+
+	@Transactional
+	@GetMapping("/getDepartmentByEmployeeID/{employeeId}")
+	public List<Department_Master> getDepartmentByEmployeeID(@PathVariable int employeeId) {
+		return departmentService.getDepartmentByEmployeeID(employeeId);
+	}
+
+	@Transactional
 	@GetMapping("/getDepartmentById/{departmentId}")
 	public Department_Master getDepartmentByID(@PathVariable int departmentId) {
 		return departmentService.getDepartmentByID(departmentId);
