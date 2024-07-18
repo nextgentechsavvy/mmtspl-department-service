@@ -32,22 +32,6 @@ public class DepartmentService {
 	}
 
 	@Transactional
-	public List<Integer> getAllDepartmentEmployeeID() {
-		List<Integer> employeeIDList = departmentRepository.getAllDepartmentEmployeeID();
-
-		if(employeeIDList.isEmpty())
-			throw new NoDepartmentDataFoundException();
-
-		return employeeIDList;
-	}
-
-	@Transactional
-	public List<Department_Master> getDepartmentByEmployeeID(int employeeId) {
-		List<Department_Master> departmentList = departmentRepository.getDepartmentByEmployeeID(employeeId);
-		return departmentList;
-	}
-	
-	@Transactional
 	public Department_Master getDepartmentByID(int departmentId) {
 		
 		//return employeeRepository.getEmployee(id).orElseThrow(() -> new EmployeeNotFoundException(id));;
@@ -93,6 +77,25 @@ public class DepartmentService {
 	
 	// ****************** Calling from FrontController ********************** //
 
+	//------------ Calling from Employee Service --------------------------//
+
+	@Transactional
+	public List<Integer> getAllDepartmentEmployeeID() {
+		List<Integer> employeeIDList = departmentRepository.getAllDepartmentEmployeeID();
+
+		if(employeeIDList.isEmpty())
+			throw new NoDepartmentDataFoundException();
+
+		return employeeIDList;
+	}
+
+	@Transactional
+	public List<Department_Master> getDepartmentByEmployeeID(int employeeId) {
+		List<Department_Master> departmentList = departmentRepository.getDepartmentByEmployeeID(employeeId);
+		return departmentList;
+	}
+
+	//------------ Calling from Employee Service --------------------------//
 
 	public String getSubscriptionMessage(String user) {
 		

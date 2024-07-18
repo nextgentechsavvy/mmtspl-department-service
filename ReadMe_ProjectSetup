@@ -77,9 +77,6 @@ Url
 
   	http://localhost:9001/restapidepartmentservices/getAllDepartment
 
-http://localhost:9001/restapidepartmentservices/getAllDepartmentEmployeeID
-  http://localhost:9001/restapidepartmentservices/getDepartmentByEmployeeID/1001
-
   	http://localhost:9001/restapidepartmentservices/getDepartmentById/2000
 
   	http://localhost:9001/restapidepartmentservices/deleteDepartment/2000
@@ -102,7 +99,13 @@ http://localhost:9001/restapidepartmentservices/getAllDepartmentEmployeeID
   	http://localhost:9001/restapidepartmentservices/deleteDepartment/200022
   	
   	
-  	
-   
+  	  	//------------ Calling from Employee Service --------------------------//
+
+    http://localhost:9001/restapidepartmentservices/getAllDepartmentEmployeeID
+
+    http://localhost:9001/restapidepartmentservices/getDepartmentByEmployeeID/1001
+
+  		//------------ Calling from Employee Service --------------------------//
+
    
    

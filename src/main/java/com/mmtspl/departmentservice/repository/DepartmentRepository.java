@@ -70,7 +70,8 @@ public class DepartmentRepository {
 		Serializable iStatus = session.save(department);
 		return department;
 	}
-	
+
+	@Transactional
 	public void updateDepartment(Department_Master department) {
 		Session session = this.sessionFactory.getCurrentSession();
 		Hibernate.initialize(department);
@@ -137,6 +138,10 @@ public class DepartmentRepository {
 	}
 
 
+	// ****************** Calling from FrontController ********************** //
+
+	//------------ Calling from Employee Service --------------------------//
+
 	@SuppressWarnings("unchecked")
 	public List<Integer> getAllDepartmentEmployeeID() {
 		Session session = this.sessionFactory.getCurrentSession();
@@ -178,7 +183,8 @@ public class DepartmentRepository {
 
 		return departmentList;
 	}
-	// ****************** Calling from FrontController ********************** //
 
-	
+	//------------ Calling from Employee Service --------------------------//
+
+
 }
